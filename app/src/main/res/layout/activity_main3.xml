@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="age"
+            type="int" />
+
+        <variable
+            name="user"
+            type="com.juyan.myapplication.livedate.User" />
+        <import type="java.util.List" />
+
+        <import type="java.util.Map" />
+
+        <!--集合的定义(<String规定了集合的泛型是String,相当于ArrayList<String>)-->
+        <variable
+            name="list"
+            type="List&lt;Integer>" />
+
+        <!--&lt;String,String&gt相当于Map<String,String>-->
+        <variable
+            name="map"
+            type="Map&lt;Integer,String>" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name1"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@{name}"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_age1"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{String.valueOf(age)}"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@{user.name}"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_age2"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@{String.valueOf(user.age)}"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_list"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@{String.valueOf(list[0])}"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_map"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:text="@{}"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_onclick"
+            android:text="onclick"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+</layout>
